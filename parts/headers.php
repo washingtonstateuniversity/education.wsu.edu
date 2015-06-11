@@ -27,7 +27,8 @@ if ( spine_get_option( 'main_header_show' ) == 'true' ) :
 		<sub class="sub-header" data-sitename="<?php echo $spine_main_header_values['site_name']; ?>" data-pagetitle="<?php echo $spine_main_header_values['page_title']; ?>" data-posttitle="<?php echo $spine_main_header_values['post_title']; ?>" data-default="<?php echo esc_html($spine_main_header_values['sub_header_default']); ?>" data-alternate="<?php echo esc_html($spine_main_header_values['sub_header_alternate']); ?>"><span class="sub-header-default"><?php echo strip_tags( $spine_main_header_values['sub_header_default'], '<a>' ); ?></span></sub>
 
 	</div>
-	<div id="header-links"><ul><li><a href="/apply/">Apply</a></li><li><a href="/give/">Give</a></li><li><a href="mailto:education.wsu.edu">Contact</a></li></ul></div>
+	<div id="header-links"><ul><li><a href="/apply/">Apply</a></li><li><a href="/give/">Give</a></li><li><a href="mailto:education@wsu.edu">Contact</a></li></ul></div>
 </header>
+<div id="header-bkgrd"></div>
 
 <?php endif; ?>
