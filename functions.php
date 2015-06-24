@@ -12,3 +12,18 @@ function wsu_education_color_palette_values() {
 		'yellow' => array( 'name' => 'Yellow',  'hex' => '#c69214' ),
 	);
 }
+
+
+/**
+ * Remove additional page templates from the drop-down menu when editing pages.
+ */
+function tfc_remove_page_templates( $templates ) {
+    unset( $templates['templates/halves.php'] );
+    unset( $templates['templates/margin-left.php'] );
+    unset( $templates['templates/margin-right.php'] );
+    unset( $templates['templates/side-left.php'] );
+    unset( $templates['templates/side-right.php'] );
+    unset( $templates['templates/single.php'] );
+    return $templates;
+}
+add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
