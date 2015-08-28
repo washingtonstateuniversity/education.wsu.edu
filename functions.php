@@ -31,11 +31,8 @@ add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
 
 
 /**
- * Add FitText functionality
+ * Enqueue child theme scripts
  */
-function theme_name_scripts() {
-	wp_enqueue_style( 'style-name', get_stylesheet_uri() );
-	wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/jquery.fittext.js', array(), '1.0.0', true );
+function education() {
+	wp_enqueue_script( 'fittext-scripts', get_stylesheet_directory_uri() . '/scripts/jquery.fittext.js', array( 'jquery' ), false, true );
 }
-
-add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
