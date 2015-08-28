@@ -10,7 +10,7 @@ function wsu_education_color_palette_values() {
 	return array(
 		'default' => array( 'name' => 'Blue',  'hex' => '#3e8b94' ),
 		'yellow' => array( 'name' => 'Yellow',  'hex' => '#c69214' ),
-		'orange' => array( 'name' => 'Orange',  'hex' => '#ddbea1' ),
+		'green' => array( 'name' => 'Green',  'hex' => '#ada400' ),
 	);
 }
 
@@ -28,3 +28,14 @@ function tfc_remove_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
+
+
+/**
+ * Add FitText functionality
+ */
+function theme_name_scripts() {
+	wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+	wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/jquery.fittext.js', array(), '1.0.0', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
