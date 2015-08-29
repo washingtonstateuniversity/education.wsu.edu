@@ -34,5 +34,5 @@ add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
  * Enqueue child theme scripts
  */
 function education() {
-	wp_enqueue_script( 'fittext-scripts', get_stylesheet_directory_uri() . '/scripts/jquery.fittext.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'fittext-scripts', get_stylesheet_directory_uri() . 'scripts/jquery.fittext.js', array( 'jquery' ), false, true );
 }
