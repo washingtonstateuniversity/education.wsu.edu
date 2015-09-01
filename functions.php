@@ -28,3 +28,11 @@ function tfc_remove_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
+
+
+// Enqueue custom fittext script
+add_action( 'wp_enqueue_scripts', 'fittext_script', 11 );
+
+function fittext_script() {
+	wp_enqueue_script( 'fittext_script', get_stylesheet_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), spine_get_script_version(), true );
+}
