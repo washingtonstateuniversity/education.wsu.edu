@@ -12,7 +12,7 @@
 
 					<header class="article-header">
 						<h1 class="article-title">404</h1>
-						<h1 class="article-subtitle">Page Not Found</h1>						
+						<h2 class="article-subtitle">Page Not Found</h2>						
 					</header>
 
 					<div class="entry-content">
