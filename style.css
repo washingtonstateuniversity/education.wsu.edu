@@ -4,7 +4,7 @@ Theme URI: https://education.wsu.edu/
 Author: WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: Child theme of WSU Spine for use by the WSU College of Education.
-Version: 0.1.7
+Version: 0.1.8
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: light
@@ -825,19 +825,19 @@ small {
 }
 
 .explore:after {
-	content: url("wp-content/uploads/sites/90/2015/08/explore-blue.png");
+	content: url("/wp-content/uploads/sites/90/2015/08/explore-blue.png");
 }
 
 .press_play:after {
-	content: url("wp-content/uploads/sites/90/2015/08/play-blue.png");
+	content: url("/wp-content/uploads/sites/90/2015/08/play-blue.png");
 }
 
 .socialize:after {
-	content: url("wp-content/uploads/sites/90/2015/08/socialize-blue.png");
+	content: url("/wp-content/uploads/sites/90/2015/08/socialize-blue.png");
 }
 
 .upcoming:after {
-	content: url("wp-content/uploads/sites/90/2015/08/upcoming-blue.png");
+	content: url("/wp-content/uploads/sites/90/2015/08/upcoming-blue.png");
 }
 
 /* socialize buttons */
@@ -926,7 +926,7 @@ body.wsu-palette-orange .row2 {
 
 .error404 main {	
 	text-align: center !important;
-	background: url("wp-content/uploads/sites/90/2015/09/404-campus.jpg") no-repeat center center fixed; 
+	background: url("/wp-content/uploads/sites/90/2015/09/404-campus.jpg") no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -935,7 +935,7 @@ body.wsu-palette-orange .row2 {
 
 .error404 .size-lt-smallish main {	
 	text-align: center !important;
-	background: url("wp-content/uploads/sites/90/2015/09/404-campus-mobile.jpg") no-repeat center center fixed; 
+	background: url("/wp-content/uploads/sites/90/2015/09/404-campus-mobile.jpg") no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -1341,7 +1341,7 @@ body:not(.unset) .tablepress-responsive-all th:first-child {
 hr.divider,
 .page-id-4136 #cboxLoadedContent > div > hr.divider {
 	height: 6px;
-	background: url(wp-content/uploads/sites/90/2015/08/diagonal-divider.png) repeat-x 0 0;
+	background: url(/wp-content/uploads/sites/90/2015/08/diagonal-divider.png) repeat-x 0 0;
     border: 0;
 	margin-top: 2rem;
 	margin-bottom: 3rem;
