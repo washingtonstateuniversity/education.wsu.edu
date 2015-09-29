@@ -31,15 +31,11 @@ add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
 
 
 // Enqueue custom College of Education scripts
-add_action( 'wp_enqueue_scripts', 'coe_scripts', 1.0 );
-
-function coe_script() {
-	wp_enqueue_script( 'coe_scripts', get_stylesheet_directory_uri() . '/js/coe-scripts.js', array( 'jquery' ), spine_get_script_version(), true );
-}
-
 // Enqueue custom fittext script
 add_action( 'wp_enqueue_scripts', 'fittext_script', 11 );
 
 function fittext_script() {
 	wp_enqueue_script( 'fittext_script', get_stylesheet_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), spine_get_script_version(), true );
+	wp_enqueue_script( 'coe_scripts', get_stylesheet_directory_uri() . '/js/coe-scripts.js', array( 'jquery' ), spine_get_script_version(), true );
+
 }
