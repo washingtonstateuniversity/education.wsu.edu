@@ -4,7 +4,7 @@ Theme URI: https://education.wsu.edu/
 Author: WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: Child theme of WSU Spine for use by the WSU College of Education.
-Version: 0.1.8
+Version: 0.1.9
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: light
@@ -1424,7 +1424,7 @@ p img {
         #cboxLoadedContent{border:5px solid #000; background:#fff;}
         #cboxTitle{position:absolute; top:-20px; left:0; color:#ccc; display: none !important;}
         #cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
-        #cboxLoadingGraphic{background:url(wp-content/uploads/sites/90/2015/08/loading.gif) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(/wp-content/uploads/sites/90/2015/08/loading.gif) no-repeat center center;}
 
         /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
         #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
@@ -1433,9 +1433,9 @@ p img {
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
         
         #cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
-        #cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(wp-content/uploads/sites/90/2015/08/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
+        #cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(/wp-content/uploads/sites/90/2015/08/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
         #cboxPrevious:hover{background-position:bottom left;}
-        #cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(wp-content/uploads/sites/90/2015/08/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
+        #cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(/wp-content/uploads/sites/90/2015/08/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
         #cboxNext:hover{background-position:bottom right;}
-        #cboxClose{position:absolute; top:10px; right:5px; display:block; background:url(wp-content/uploads/sites/90/2015/08/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+        #cboxClose{position:absolute; top:10px; right:5px; display:block; background:url(/wp-content/uploads/sites/90/2015/08/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
         #cboxClose:hover{background-position: center -25px;}
