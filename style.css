@@ -4,7 +4,7 @@ Theme URI: https://education.wsu.edu/
 Author: WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: Child theme of WSU Spine for use by the WSU College of Education.
-Version: 0.1.10
+Version: 0.1.11
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: light
@@ -467,7 +467,16 @@ h1.sub-header-default {
 
 .photo-story .row.single .column, 
 .featured-story .row.single .column {
-	width: 70%;
+	width: 50%;
+}
+
+.size-lt-smallish .photo-story .row.single .column, 
+.size-lt-smallish .featured-story .row.single .column {
+	width: 100%;
+}
+
+.size-lt-smallish .photo-story {
+	box-shadow: inset 0 0 0 100000px rgba(0,0,0,.2);
 }
 
 .photo-story {
@@ -488,11 +497,13 @@ h1.sub-header-default {
 	text-transform: uppercase;
 	padding-bottom: .75rem;
 	font-weight: 700;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .photo-story p {
 	color: #fff;
 	font-size: 1.25rem;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .photo-story p,
