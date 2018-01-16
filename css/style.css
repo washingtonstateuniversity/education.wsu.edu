@@ -1,16 +1,3 @@
-/*
- Theme Name: WSU College of Education
- Theme URI: https://education.wsu.edu/
- Author: WSU University Communications
- Author URI: https://web.wsu.edu/
- Description: Child theme of WSU Spine for use by the WSU College of Education.
- Version: 0.1.12
- License: GNU General Public License v2 or later
- License URI: https://www.gnu.org/licenses/gpl-2.0.html
- Tags: light
- Template: spine
-*/
-
 /* ============================================================
   COLORS
 ============================================================ */
@@ -174,11 +161,9 @@ main a {
 	background: #f1f4f6;
 	display: inline-block;
 	vertical-align: middle;
-	-webkit-transform: translateZ(0);
-	        transform: translateZ(0);
+	transform: translateZ(0);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	        backface-visibility: hidden;
+	backface-visibility: hidden;
 	position: relative;
 	overflow: hidden;
 	padding-bottom: .1rem;
@@ -318,9 +303,7 @@ main {
 /* reset after main styling of hyperlinks */
 .main-header sub:not(.unset) a,
 .main-header sup:not(.unset) a {
-	-webkit-transform: none;
-	    -ms-transform: none;
-	        transform: none;
+	transform: none;
 	transition: none;
 }
 
@@ -533,9 +516,7 @@ main a.button:focus,
 main a.button2,
 main a.button2:hover,
 main a.button2:focus {
-	-webkit-transform: none;
-	    -ms-transform: none;
-	        transform: none;
+	transform: none;
 	transition: none;
 	margin-top: 1rem;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
@@ -726,8 +707,7 @@ small {
 	width: 100%;
 	display: inline-block;
 	border-bottom: 5px solid #3e8b94;
-	-o-object-fit: cover;
-	   object-fit: cover;
+	object-fit: cover;
 	height: 200px !important;
 }
 
@@ -1027,11 +1007,9 @@ body:not(.unset) table th,
 	background: #fff;
 	display: inline-block;
 	vertical-align: middle;
-	-webkit-transform: translateZ(0);
-	        transform: translateZ(0);
+	transform: translateZ(0);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	        backface-visibility: hidden;
+	backface-visibility: hidden;
 	position: relative;
 	overflow: hidden;
 	padding-bottom: .1rem;
@@ -1549,4 +1527,3 @@ p img {
 #cboxClose:hover {
 	background-position: center -25px;
 }
-/*# sourceMappingURL=style.css.map */
