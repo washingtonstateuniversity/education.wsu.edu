@@ -2,7 +2,7 @@
 
 	<main class="spine-single-template">
 
-		<?php get_template_part('parts/headers'); ?>
+		<?php get_template_part( 'parts/headers' ); ?>
 
 		<section class="row single gutter pad-top">
 
@@ -12,7 +12,7 @@
 
 					<header class="article-header">
 						<h1 class="article-title">404</h1><br>
-						<h2 class="article-subtitle">Page Not Found</h2>						
+						<h2 class="article-subtitle">Page Not Found</h2>
 					</header>
 
 					<div class="entry-content">
@@ -30,4 +30,4 @@
 
 	</main>
 
-<?php get_footer(); ?>
+<?php get_footer();
