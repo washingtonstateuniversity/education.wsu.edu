@@ -1,5 +1,17 @@
 <?php
 
+add_filter( 'spine_child_theme_version', 'education_theme_version' );
+/**
+ * Provides a theme version for use in cache busting.
+ *
+ * @since 0.2.0
+ *
+ * @return string
+ */
+function education_theme_version() {
+	return '0.2.0';
+}
+
 add_filter( 'wsu_color_palette_values', 'wsu_education_color_palette_values' );
 /**
  * Alter the defaults provided by the WSU Color Palette plugin.
@@ -44,8 +56,8 @@ add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
 add_action( 'wp_enqueue_scripts', 'fittext_script', 11 );
 
 function fittext_script() {
-	wp_enqueue_script( 'fittext_script', get_stylesheet_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), spine_get_script_version(), true );
-	wp_enqueue_script( 'coe_scripts', get_stylesheet_directory_uri() . '/js/coe-scripts.js', array( 'jquery' ), spine_get_script_version(), true );
+	wp_enqueue_script( 'fittext_script', get_stylesheet_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), education_theme_version(), true );
+	wp_enqueue_script( 'coe_scripts', get_stylesheet_directory_uri() . '/js/coe-scripts.js', array( 'jquery' ), education_theme_version(), true );
 }
 
 add_filter( 'wsuwp_people_item_html', 'education_people_html', 10, 2 );
