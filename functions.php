@@ -85,22 +85,6 @@ function education_people_html( $html, $person ) {
 		$photo = $person->profile_photo;
 	}
 
-	// Get the display title(s).
-	if ( ! empty( $person->working_titles ) ) {
-		if ( ! empty( $person->display_title ) ) {
-			$display_titles = explode( ',', $person->display_title );
-			foreach ( $display_titles as $display_title ) {
-				if ( isset( $person->working_titles[ $display_title ] ) ) {
-					$titles[] = $person->working_titles[ $display_title ];
-				}
-			}
-		} else {
-			$titles = $person->working_titles;
-		}
-	} else {
-		$titles = array( $person->position_title );
-	}
-
 	// Get the website meta.
 	$link = ( ! empty( $person->website ) ) ? $person->website : false;
 
@@ -110,14 +94,36 @@ function education_people_html( $html, $person ) {
 		$classes .= ' linked';
 	}
 
+	// Tags are leveraged for capturing program information.
+	$programs = array(
+		'athletic-training',
+		'cultural-studies',
+		'educational-psychology',
+		'marketing-and-communications',
+		'mathematics-and-science',
+		'special-education',
+		'sport-management',
+	);
+
+	$program = false;
+
+	// Get the profile tags.
+	if ( ! empty( $person->taxonomy_terms->post_tag ) ) {
+		foreach ( $person->taxonomy_terms->post_tag as $tag ) {
+			if ( in_array( $tag->slug, $programs, true ) ) {
+				$program = $tag->name;
+			}
+		}
+	}
+
 	ob_start();
 	?>
 	<div class="<?php echo esc_attr( $classes ); ?>"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
 		<?php if ( $link ) { ?><a href="<?php echo esc_url( $link ) ?>"><?php } ?>
 		<div class="wsuwp-person-info">
 			<div class="wsuwp-person-name"><?php echo esc_html( $person->title->rendered ); ?></div>
-			<?php foreach ( $titles as $title ) { ?>
-			<div class="wsuwp-person-position"><?php echo esc_html( $title ); ?></div>
+			<?php if ( $program ) { ?>
+			<div class="wsuwp-person-program"><?php echo esc_html( $program ); ?></div>
 			<?php } ?>
 		</div>
 		<?php if ( $link ) { ?></a><?php } ?>
