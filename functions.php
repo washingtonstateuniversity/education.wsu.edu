@@ -101,15 +101,26 @@ function education_people_html( $html, $person ) {
 		$titles = array( $person->position_title );
 	}
 
+	// Get the website meta.
+	$link = ( ! empty( $person->website ) ) ? $person->website : false;
+
+	$classes = 'wsuwp-person-container';
+
+	if ( $link ) {
+		$classes .= ' linked';
+	}
+
 	ob_start();
 	?>
-	<div class="wsuwp-person-container"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
+	<div class="<?php echo esc_attr( $classes ); ?>"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
+		<?php if ( $link ) { ?><a href="<?php echo esc_url( $link ) ?>"><?php } ?>
 		<div class="wsuwp-person-info">
 			<div class="wsuwp-person-name"><?php echo esc_html( $person->title->rendered ); ?></div>
 			<?php foreach ( $titles as $title ) { ?>
 			<div class="wsuwp-person-position"><?php echo esc_html( $title ); ?></div>
 			<?php } ?>
 		</div>
+		<?php if ( $link ) { ?></a><?php } ?>
 	</div>
 
 	<?php
