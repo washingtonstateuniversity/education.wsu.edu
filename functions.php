@@ -121,6 +121,9 @@ function education_people_html( $html, $person ) {
 	<div class="<?php echo esc_attr( $classes ); ?>"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
 		<?php if ( $link ) { ?><a href="<?php echo esc_url( $link ) ?>"><?php } ?>
 		<div class="wsuwp-person-info">
+			<?php if ( $link ) { ?>
+			<div class="screen-reader-text">View profile for</div>
+			<?php } ?>
 			<div class="wsuwp-person-name"><?php echo esc_html( $person->title->rendered ); ?></div>
 			<?php if ( $program ) { ?>
 			<div class="wsuwp-person-program"><?php echo esc_html( $program ); ?></div>
