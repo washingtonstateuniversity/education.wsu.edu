@@ -94,35 +94,12 @@ function education_people_html( $html, $person ) {
 		$classes .= ' linked';
 	}
 
-	// Tags are leveraged for capturing program information.
-	$programs = array(
-		'athletic-training',
-		'cultural-studies',
-		'educational-psychology',
-		'marketing-and-communications',
-		'mathematics-and-science',
-		'special-education',
-		'sport-management',
-	);
-
 	$program = false;
 
 	// Get the profile tags.
 	if ( ! empty( $person->taxonomy_terms->post_tag ) ) {
 		foreach ( $person->taxonomy_terms->post_tag as $tag ) {
-			if ( in_array( $tag->slug, $programs, true ) ) {
-				$program = $tag->name;
-			}
-		}
-	}
-
-	// Add classes based on taxonomy terms.
-	if ( ! empty( $person->taxonomy_terms ) ) {
-		foreach ( $person->taxonomy_terms as $taxonomy => $terms ) {
-			$prefix = array_pop( explode( '_', $taxonomy ) );
-			foreach ( $terms as $term ) {
-				$classes .= ' ' . $prefix . '-' . $term->slug;
-			}
+			$program = $tag->name;
 		}
 	}
 
