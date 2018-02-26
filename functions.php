@@ -85,31 +85,38 @@ function education_people_html( $html, $person ) {
 		$photo = $person->profile_photo;
 	}
 
-	// Get the display title(s).
-	if ( ! empty( $person->working_titles ) ) {
-		if ( ! empty( $person->display_title ) ) {
-			$display_titles = explode( ',', $person->display_title );
-			foreach ( $display_titles as $display_title ) {
-				if ( isset( $person->working_titles[ $display_title ] ) ) {
-					$titles[] = $person->working_titles[ $display_title ];
-				}
-			}
-		} else {
-			$titles = $person->working_titles;
+	// Get the website meta.
+	$link = ( ! empty( $person->website ) ) ? $person->website : false;
+
+	$classes = 'wsuwp-person-container';
+
+	if ( $link ) {
+		$classes .= ' linked';
+	}
+
+	$program = false;
+
+	// Get the profile tags.
+	if ( ! empty( $person->taxonomy_terms->post_tag ) ) {
+		foreach ( $person->taxonomy_terms->post_tag as $tag ) {
+			$program = $tag->name;
 		}
-	} else {
-		$titles = array( $person->position_title );
 	}
 
 	ob_start();
 	?>
-	<div class="wsuwp-person-container"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
+	<div class="<?php echo esc_attr( $classes ); ?>"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
+		<?php if ( $link ) { ?><a href="<?php echo esc_url( $link ) ?>"><?php } ?>
 		<div class="wsuwp-person-info">
+			<?php if ( $link ) { ?>
+			<div class="screen-reader-text">View profile for</div>
+			<?php } ?>
 			<div class="wsuwp-person-name"><?php echo esc_html( $person->title->rendered ); ?></div>
-			<?php foreach ( $titles as $title ) { ?>
-			<div class="wsuwp-person-position"><?php echo esc_html( $title ); ?></div>
+			<?php if ( $program ) { ?>
+			<div class="wsuwp-person-program"><?php echo esc_html( $program ); ?></div>
 			<?php } ?>
 		</div>
+		<?php if ( $link ) { ?></a><?php } ?>
 	</div>
 
 	<?php
