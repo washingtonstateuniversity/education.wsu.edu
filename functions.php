@@ -103,6 +103,16 @@ function education_people_html( $html, $person ) {
 		}
 	}
 
+	// Add classes based on taxonomy terms.
+	if ( ! empty( $person->taxonomy_terms ) ) {
+		foreach ( $person->taxonomy_terms as $taxonomy => $terms ) {
+			$prefix = array_pop( explode( '_', $taxonomy ) );
+			foreach ( $terms as $term ) {
+				$classes .= ' ' . $prefix . '-' . $term->slug;
+			}
+		}
+	}
+
 	ob_start();
 	?>
 	<div class="<?php echo esc_attr( $classes ); ?>"<?php if ( $photo ) { ?> style="background-image: url(<?php echo esc_url( $photo ); ?>);"<?php } ?>>
