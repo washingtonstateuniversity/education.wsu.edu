@@ -9,7 +9,7 @@ add_filter( 'spine_child_theme_version', 'education_theme_version' );
  * @return string
  */
 function education_theme_version() {
-	return '0.2.1';
+	return '0.2.2';
 }
 
 add_filter( 'wsu_color_palette_values', 'wsu_education_color_palette_values' );
