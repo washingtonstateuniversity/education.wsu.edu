@@ -9,7 +9,7 @@ add_filter( 'spine_child_theme_version', 'education_theme_version' );
  * @return string
  */
 function education_theme_version() {
-	return '0.2.1';
+	return '0.2.2';
 }
 
 add_filter( 'wsu_color_palette_values', 'wsu_education_color_palette_values' );
@@ -100,6 +100,16 @@ function education_people_html( $html, $person ) {
 	if ( ! empty( $person->taxonomy_terms->post_tag ) ) {
 		foreach ( $person->taxonomy_terms->post_tag as $tag ) {
 			$program = $tag->name;
+		}
+	}
+
+	// Add classes based on taxonomy terms.
+	if ( ! empty( $person->taxonomy_terms ) ) {
+		foreach ( $person->taxonomy_terms as $taxonomy => $terms ) {
+			$prefix = array_pop( explode( '_', $taxonomy ) );
+			foreach ( $terms as $term ) {
+				$classes .= ' ' . $prefix . '-' . $term->slug;
+			}
 		}
 	}
 
